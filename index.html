@@ -9,10 +9,13 @@
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: #0E1C1F url('https://upload.wikimedia.org/wikipedia/commons/3/36/Flower-of-Life-small.svg') no-repeat center center;
-      background-size: 500px;
-      background-attachment: fixed;
+      background: #0E1C1F;
       color: #E8EAE3;
+      background-image: url('https://upload.wikimedia.org/wikipedia/commons/3/36/Flower-of-Life-small.svg');
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 600px;
+      background-attachment: fixed;
     }
     header {
       background: linear-gradient(to right, #122829, #1B3C3E);
@@ -49,113 +52,4 @@
       color: #D6F0DF;
     }
     .steps, .audience {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
-      max-width: 800px;
-      margin: auto;
-    }
-    .step, .audience-item {
-      background: #1B2B2D;
-      padding: 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      text-align: left;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      color: #C9E0DA;
-    }
-    .step svg, .audience-item svg {
-      width: 24px;
-      height: 24px;
-      fill: #81B8B2;
-      flex-shrink: 0;
-    }
-    .signup {
-      background: #253938;
-      padding: 2.5rem;
-      border-radius: 12px;
-      max-width: 500px;
-      margin: auto;
-    }
-    input, button {
-      width: 100%;
-      padding: 1rem;
-      margin-top: 1rem;
-      border: 1px solid #4A6C6A;
-      border-radius: 8px;
-      font-size: 1rem;
-      background-color: #132524;
-      color: #D9EFE8;
-    }
-    button {
-      background-color: #4E8F8A;
-      color: white;
-      font-weight: 600;
-      border: none;
-      cursor: pointer;
-    }
-    label {
-      font-size: 0.95rem;
-      color: #D0D6D5;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>Alayio</h1>
-    <p>Connect. Align. Heal.</p>
-    <div class="cta-buttons">
-      <a href="#seeker">Find Healing</a>
-      <a href="#healer">Join as a Healer</a>
-    </div>
-  </header>
-
-  <section>
-    <h2>How It Works</h2>
-    <div class="steps">
-      <div class="step">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a8 8 0 100 16 8 8 0 000-16zM2 12C2 6.48 6.48 2 12 2s10 4.48 10 10-4.48 10-10 10S2 17.52 2 12z"/></svg>
-        Step 1: Tell us how you feel — our AI guides you through a brief check-in
-      </div>
-      <div class="step">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 2a8 8 0 106.32 12.906l5.387 5.387-1.414 1.414-5.387-5.387A8 8 0 0010 2zm0 2a6 6 0 110 12A6 6 0 0110 4z"/></svg>
-        Step 2: Get matched with a healing modality or practitioner that suits your needs
-      </div>
-      <div class="step">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v2h20V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H9V3a1 1 0 00-1-1H6zm14 6H4v11a2 2 0 002 2h12a2 2 0 002-2V8z"/></svg>
-        Step 3: Book your session and begin your journey inward
-      </div>
-    </div>
-  </section>
-
-  <section id="seeker">
-    <h2>Who Is Alayio For?</h2>
-    <div class="audience">
-      <div class="audience-item">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-3.546 19.38c.56.102.764-.243.764-.54 0-.267-.01-1.15-.015-2.086-3.113.676-3.77-1.503-3.77-1.503-.51-1.293-1.244-1.638-1.244-1.638-1.018-.696.078-.683.078-.683 1.126.08 1.72 1.156 1.72 1.156 1 .17 1.527 1.256 1.527 1.256.896 1.544 2.35 1.1 2.924.84.092-.65.35-1.1.636-1.354-2.485-.28-5.095-1.242-5.095-5.53 0-1.22.437-2.22 1.155-3.002-.116-.283-.5-1.424.11-2.965 0 0 .94-.3 3.08 1.15a10.75 10.75 0 015.606 0c2.138-1.45 3.078-1.15 3.078-1.15.61 1.541.228 2.682.112 2.965.72.782 1.152 1.782 1.152 3.002 0 4.3-2.614 5.25-5.105 5.523.36.31.684.92.684 1.856 0 1.34-.012 2.417-.012 2.746 0 .3.2.648.77.54A10 10 0 0012 2z"/></svg>
-        For Seekers: Overwhelmed, anxious, or disconnected — Alayio guides you home.
-      </div>
-      <div class="audience-item">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-3.484 19.404l-.516-1.8 1.176-.812a7 7 0 1111.552-5.73c0 .595-.08 1.17-.23 1.714l1.508.934c.111-.537.17-1.09.17-1.648A10 10 0 0012 2z"/></svg>
-        For Healers: You offer insight and peace. We help you grow and connect with aligned clients.
-      </div>
-    </div>
-  </section>
-
-  <section class="signup">
-    <h2>Join Our Sacred Circle</h2>
-    <p>Be the first to experience Alayio. Whether you seek healing or offer it — we're here to connect the light.</p>
-    <form action="https://formspree.io/f/mgvarjza" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <label>
-        <input type="checkbox" name="healer" />
-        I am a healer/practitioner
-      </label>
-      <button type="submit">Join the Waitlist</button>
-    </form>
-  </section>
-</body>
-</html>
+      display
