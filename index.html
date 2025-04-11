@@ -4,32 +4,35 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Alayio — Connect. Align. Heal.</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
-      font-family: 'Inter', sans-serif;
-      background: #f7f6fa;
-      color: #333;
+      font-family: 'Poppins', sans-serif;
+      background: #0E1C1F url('https://upload.wikimedia.org/wikipedia/commons/3/36/Flower-of-Life-small.svg') no-repeat center center;
+      background-size: 500px;
+      background-attachment: fixed;
+      color: #E8EAE3;
     }
     header {
-      background: linear-gradient(to right, #c8dfe2, #d8cce8);
+      background: linear-gradient(to right, #122829, #1B3C3E);
       padding: 4rem 2rem;
       text-align: center;
     }
     header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
+      font-size: 3rem;
+      font-weight: 600;
+      color: #B5E3C1;
     }
     header p {
       font-size: 1.2rem;
-      margin-bottom: 2rem;
+      color: #B9C9C9;
     }
     .cta-buttons a {
       text-decoration: none;
       padding: 0.8rem 1.5rem;
       margin: 0 0.5rem;
-      background: #5e9e9e;
+      background: #4E8F8A;
       color: white;
       border-radius: 8px;
       font-weight: 600;
@@ -40,8 +43,10 @@
       text-align: center;
     }
     section h2 {
-      font-size: 2rem;
+      font-size: 2.2rem;
       margin-bottom: 1rem;
+      font-weight: 600;
+      color: #D6F0DF;
     }
     .steps, .audience {
       display: flex;
@@ -51,14 +56,25 @@
       margin: auto;
     }
     .step, .audience-item {
-      background: white;
+      background: #1B2B2D;
       padding: 1.5rem;
       border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      text-align: left;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      color: #C9E0DA;
+    }
+    .step svg, .audience-item svg {
+      width: 24px;
+      height: 24px;
+      fill: #81B8B2;
+      flex-shrink: 0;
     }
     .signup {
-      background: #e9f1f2;
-      padding: 2rem;
+      background: #253938;
+      padding: 2.5rem;
       border-radius: 12px;
       max-width: 500px;
       margin: auto;
@@ -67,15 +83,22 @@
       width: 100%;
       padding: 1rem;
       margin-top: 1rem;
-      border: 1px solid #ccc;
+      border: 1px solid #4A6C6A;
       border-radius: 8px;
       font-size: 1rem;
+      background-color: #132524;
+      color: #D9EFE8;
     }
     button {
-      background-color: #5e9e9e;
+      background-color: #4E8F8A;
       color: white;
+      font-weight: 600;
       border: none;
       cursor: pointer;
+    }
+    label {
+      font-size: 0.95rem;
+      color: #D0D6D5;
     }
   </style>
 </head>
@@ -92,40 +115,13 @@
   <section>
     <h2>How It Works</h2>
     <div class="steps">
-      <div class="step">🧘‍♀️ Step 1: Tell us how you feel — our AI guides you through a brief check-in</div>
-      <div class="step">🔍 Step 2: Get matched with a healing modality or practitioner that suits your needs</div>
-      <div class="step">📅 Step 3: Book your session and begin your journey inward</div>
-    </div>
-  </section>
-
-  <section id="seeker">
-    <h2>Who Is Alayio For?</h2>
-    <div class="audience">
-      <div class="audience-item">🌿 For Seekers: If you feel overwhelmed, anxious, disconnected — Alayio guides you to the healing you need most.</div>
-      <div class="audience-item">✨ For Healers: You offer peace, insight, and light. We help you grow your practice and connect with aligned clients.</div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Why Alayio?</h2>
-    <div class="steps">
-      <div class="step">⚡ AI meets Ancient Wisdom</div>
-      <div class="step">🛡️ A safe, sacred space to heal</div>
-      <div class="step">💫 Personalized healing experiences — no two journeys are the same</div>
-      <div class="step">🌍 Global guides. Real people. Real transformation.</div>
-    </div>
-  </section>
-
-<section class="signup">
-  <h2>Join Our Sacred Circle</h2>
-  <p>Be the first to experience the Alayio platform. Whether you seek healing or offer it — we're here to connect the light.</p>
-  <form action="https://formspree.io/f/mgvarjza" method="POST">
-    <input type="text" name="name" placeholder="Your Name" required />
-    <input type="email" name="email" placeholder="Your Email" required />
-    <label>
-      <input type="checkbox" name="healer" />
-      I am a healer/practitioner
-    </label>
-    <button type="submit">Join the Waitlist</button>
-  </form>
-</section>
+      <div class="step">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4a8 8 0 100 16 8 8 0 000-16zM2 12C2 6.48 6.48 2 12 2s10 4.48 10 10-4.48 10-10 10S2 17.52 2 12z"/></svg>
+        Step 1: Tell us how you feel — our AI guides you through a brief check-in
+      </div>
+      <div class="step">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 2a8 8 0 106.32 12.906l5.387 5.387-1.414 1.414-5.387-5.387A8 8 0 0010 2zm0 2a6 6 0 110 12A6 6 0 0110 4z"/></svg>
+        Step 2: Get matched with a healing modality or practitioner that suits your needs
+      </div>
+      <div class="step">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v2h20V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H9V3a
