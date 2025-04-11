@@ -52,4 +52,97 @@
       color: #D6F0DF;
     }
     .steps, .audience {
-      display
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      max-width: 800px;
+      margin: auto;
+    }
+    .step, .audience-item {
+      background: #1B2B2D;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      text-align: left;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      color: #C9E0DA;
+    }
+    .symbol {
+      font-size: 1.8rem;
+      color: #81B8B2;
+      flex-shrink: 0;
+    }
+    .signup {
+      background: #253938;
+      padding: 2.5rem;
+      border-radius: 12px;
+      max-width: 500px;
+      margin: auto;
+    }
+    input, button {
+      width: 100%;
+      padding: 1rem;
+      margin-top: 1rem;
+      border: 1px solid #4A6C6A;
+      border-radius: 8px;
+      font-size: 1rem;
+      background-color: #132524;
+      color: #D9EFE8;
+    }
+    button {
+      background-color: #4E8F8A;
+      color: white;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+    }
+    label {
+      font-size: 0.95rem;
+      color: #D0D6D5;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Alayio</h1>
+    <p>Connect. Align. Heal.</p>
+    <div class="cta-buttons">
+      <a href="#seeker">Find Healing</a>
+      <a href="#healer">Join as a Healer</a>
+    </div>
+  </header>
+
+  <section>
+    <h2>How It Works</h2>
+    <div class="steps">
+      <div class="step"><div class="symbol">✦</div>Step 1: Tell us how you feel — our AI guides you through a brief check-in</div>
+      <div class="step"><div class="symbol">✺</div>Step 2: Get matched with a healing modality or practitioner that suits your needs</div>
+      <div class="step"><div class="symbol">☼</div>Step 3: Book your session and begin your journey inward</div>
+    </div>
+  </section>
+
+  <section id="seeker">
+    <h2>Who Is Alayio For?</h2>
+    <div class="audience">
+      <div class="audience-item"><div class="symbol">❉</div>For Seekers: Overwhelmed, anxious, or disconnected — Alayio guides you home.</div>
+      <div class="audience-item"><div class="symbol">✺</div>For Healers: You offer insight and peace. We help you grow and connect with aligned clients.</div>
+    </div>
+  </section>
+
+  <section class="signup">
+    <h2>Join Our Sacred Circle</h2>
+    <p>Be the first to experience Alayio. Whether you seek healing or offer it — we're here to connect the light.</p>
+    <form action="https://formspree.io/f/mgvarjza" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <label>
+        <input type="checkbox" name="healer" />
+        I am a healer/practitioner
+      </label>
+      <button type="submit">Join the Waitlist</button>
+    </form>
+  </section>
+</body>
+</html>
