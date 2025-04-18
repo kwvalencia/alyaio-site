@@ -23,7 +23,7 @@
     }
     .directory {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
     }
     .healer-card {
@@ -33,14 +33,6 @@
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
       text-align: center;
     }
-    .healer-card img {
-      width: 100px;
-      height: 100px;
-      object-fit: cover;
-      border-radius: 50%;
-      margin-bottom: 1rem;
-      border: 2px solid #B5E3C1;
-    }
     .healer-card h2 {
       font-size: 1.3rem;
       color: #D6F0DF;
@@ -49,6 +41,11 @@
     .healer-card p {
       font-size: 0.95rem;
       color: #C9E0DA;
+      margin: 0.3rem 0;
+    }
+    .healer-card .modalities {
+      font-size: 0.85rem;
+      color: #81B8B2;
       margin: 0.5rem 0;
     }
     .healer-card a {
@@ -73,7 +70,7 @@
   <script>
     const API_URL = "https://v1.nocodeapi.com/alayio/airtable/JYbOeqOufFPbHVMX";
 
-    fetch(`${API_URL}?limit=100`)
+    fetch(`${API_URL}/records?view=Approved%20Healers&perPage=100`)
       .then(res => res.json())
       .then(data => {
         const container = document.getElementById('healer-directory');
@@ -85,11 +82,16 @@
           const card = document.createElement('div');
           card.className = 'healer-card';
 
+          const modalities = f['Modalities Offered'] ? f['Modalities Offered'].join(', ') : '';
+          const bio = f['Short Bio'] || f['Philosophy or Healing Approach'] || 'Coming soon...';
+
           card.innerHTML = `
-            <img src="${f['Profile Photo URL'] || 'https://via.placeholder.com/100'}" alt="${f['Full Name'] || 'Healer'}">
             <h2>${f['Full Name'] || 'Unnamed Healer'}</h2>
-            <p>${f['Modalities Offered'] || ''}</p>
-            <p>${f['Short Bio'] || ''}</p>
+            <p><strong>Location:</strong> ${f['Location'] || 'N/A'}</p>
+            <p><strong>Experience:</strong> ${f['Years of Experience'] || '?'} years (${f['Experience Level'] || 'Unknown'})</p>
+            <p class="modalities">${modalities}</p>
+            <p>${bio.slice(0, 160)}...</p>
+            ${f['Social Media or Instagram'] ? `<p><a href="https://instagram.com/${f['Social Media or Instagram']}" target="_blank">@${f['Social Media or Instagram']}</a></p>` : ''}
             ${f['Booking Link'] ? `<a href="${f['Booking Link']}" target="_blank">Book a Session</a>` : ''}
           `;
 
