@@ -70,7 +70,7 @@
   <script>
     const API_URL = "https://v1.nocodeapi.com/alayio/airtable/JYbOeqOufFPbHVMX";
 
-    fetch(`${API_URL}?view=Approved%20Healers&perPage=100`)
+    fetch(`${API_URL}?tableName=Healer%20Applications&view=Approved%20Healers&perPage=10`)
       .then(res => res.json())
       .then(data => {
         const container = document.getElementById('healer-directory');
