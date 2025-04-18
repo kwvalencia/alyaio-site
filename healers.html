@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Alayio Healers Directory</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background-color: #0E1C1F;
+      color: #E8EAE3;
+      font-family: 'Poppins', sans-serif;
+      padding: 2rem;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: #B5E3C1;
+    }
+
+    .directory {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .healer-card {
+      background-color: #1B2B2D;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .healer-card img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      border: 2px solid #B5E3C1;
+    }
+
+    .healer-card h2 {
+      font-size: 1.3rem;
+      color: #D6F0DF;
+      margin: 0.5rem 0;
+    }
+
+    .healer-card p {
+      font-size: 0.95rem;
+      color: #C9E0DA;
+      margin: 0.5rem 0 1rem;
+    }
+
+    .healer-card a {
+      text-decoration: none;
+      color: #B5E3C1;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Meet the Alayio Healers</h1>
+    <p>Real people. Real wisdom. Here to walk with you.</p>
+  </header>
+
+  <div class="directory">
+    <!-- Placeholder Healer Card -->
+    <div class="healer-card">
+      <img src="https://via.placeholder.com/100" alt="Healer Name">
+      <h2>Healer Name</h2>
+      <p>Breathwork • Reiki • Sound Healing</p>
+      <p>“Helping others return to their center through sacred practice.”</p>
+      <a href="#" target="_blank">Book a Session</a>
+    </div>
+
+    <!-- Copy and paste more .healer-card blocks here -->
+  </div>
+</body>
+</html>
