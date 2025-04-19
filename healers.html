@@ -99,6 +99,16 @@
           const f = record.fields;
           const nameSlug = (f['Full Name'] || '').toLowerCase().replace(/ /g, '-');
 
+          let profileImage = "";
+          if (f['Profile Photo URL']) {
+            profileImage = f['Profile Photo URL'];
+          } else if (
+            f['Upload / Certifications'] &&
+            f['Upload / Certifications'][0]?.thumbnails?.large?.url
+          ) {
+            profileImage = f['Upload / Certifications'][0].thumbnails.large.url;
+          }
+
           const card = document.createElement('div');
           card.className = 'healer-card';
 
@@ -107,7 +117,7 @@
             : '';
 
           card.innerHTML = `
-            ${f['Profile Photo URL'] ? `<img class="profile-img" src="${f['Profile Photo URL']}" alt="${f['Full Name']}" />` : ''}
+            ${profileImage ? `<img class="profile-img" src="${profileImage}" alt="${f['Full Name']}" />` : ''}
             <div class="healer-name">${f['Full Name'] || 'Unnamed Healer'}</div>
 
             <div class="info-block">
