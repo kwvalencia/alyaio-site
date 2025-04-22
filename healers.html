@@ -89,7 +89,7 @@
   <script>
     const API_URL = "https://v1.nocodeapi.com/alayio/airtable/JYbOeqOufFPbHVMX";
 
-    fetch(`${API_URL}?tableName=Healer%20Applications&view=Approved%20Healers&perPage=10`)
+    fetch(`${API_URL}?tableName=Healer%20Profiles&perPage=10`)
       .then(res => res.json())
       .then(data => {
         const container = document.getElementById('healer-directory');
@@ -99,21 +99,13 @@
           const f = record.fields;
           const nameSlug = (f['Full Name'] || '').toLowerCase().replace(/ /g, '-');
 
-          let profileImage = "";
-          if (f['Profile Photo URL']) {
-            profileImage = f['Profile Photo URL'];
-          } else if (
-            f['Upload / Certifications'] &&
-            f['Upload / Certifications'][0]?.thumbnails?.large?.url
-          ) {
-            profileImage = f['Upload / Certifications'][0].thumbnails.large.url;
-          }
+          let profileImage = f['Profile Photo URL'] || '';
 
           const card = document.createElement('div');
           card.className = 'healer-card';
 
           const modalitiesList = f['Modalities Offered']
-            ? `<ul class="modalities-list">${f['Modalities Offered'].map(m => `<li>${m}</li>`).join('')}</ul>`
+            ? `<ul class="modalities-list">${f['Modalities Offered'].split(',').map(m => `<li>${m.trim()}</li>`).join('')}</ul>`
             : '';
 
           card.innerHTML = `
@@ -123,6 +115,7 @@
             <div class="info-block">
               <p><strong>Location:</strong> ${f['Location'] || 'N/A'}</p>
               <p><strong>Experience:</strong> ${f['Years of Experience'] || '?'} years</p>
+              <p><strong>Level:</strong> ${f['Experience Level'] || 'N/A'}</p>
             </div>
 
             <div class="info-block">
@@ -131,11 +124,12 @@
             </div>
 
             <div class="info-block">
-              <p>${(f['Short Bio'] || f['Philosophy or Healing Approach'] || 'Coming soon...').slice(0, 180)}...</p>
+              <p>${(f['Philosophy or Healing Approach'] || 'Coming soon...').slice(0, 200)}...</p>
             </div>
 
             <div class="card-footer">
               ${f['Social Media or Instagram'] ? `<a href="https://instagram.com/${f['Social Media or Instagram']}" target="_blank">@${f['Social Media or Instagram']}</a>` : ''}
+              ${f['Booking Link'] ? `<a href="${f['Booking Link']}" target="_blank">Book</a>` : ''}
               <a href="/healers/${nameSlug}.html">View Profile</a>
             </div>
           `;
